@@ -41,8 +41,11 @@ which is why it belongs in settings/action config and never in code.
 
 The test suite locks the request shape (URL, method, JSON body) against HA's
 documented webhook contract with the HTTP seam stubbed — no live HA instance
-required. Community validation against a real instance is welcome; see the
-tracking issue in the registry.
+required. Nobody has yet confirmed it against a **real** Home Assistant, so that
+is the one claim this repo does not make. If you run it against yours, please say
+so on [the validation tracking
+issue](https://github.com/PersonalClaw/action-home-assistant/issues/1) — your HA
+version and whether the automation fired is enough.
 
 ## Run the tests
 

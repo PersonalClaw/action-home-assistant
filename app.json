@@ -1,8 +1,8 @@
 {
   "name": "action-home-assistant",
   "version": "0.1.0",
-  "displayName": "Action Home Assistant",
-  "description": "A PersonalClaw action provider.",
+  "displayName": "Home Assistant Webhook",
+  "description": "Fire a Home Assistant webhook automation from any PersonalClaw trigger. Point it at your HA instance, then give each action the webhook id to call.",
   "icon": "Blocks",
   "license": "MIT",
   "tags": [
@@ -21,12 +21,23 @@
     "settingsSchema": {
       "type": "object",
       "properties": {
+        "base_url": {
+          "type": "string",
+          "default": "",
+          "x-meta": {
+            "label": "Home Assistant URL",
+            "help": "Your HA instance, e.g. http://homeassistant.local:8123. Required: without it every action fails with a named error."
+          }
+        },
         "timeout_secs": {
           "type": "integer",
           "default": 20,
           "x-meta": {
-            "label": "Request timeout",
-            "help": "Seconds this provider waits before giving up."
+            "label": "Request Timeout",
+            "help": "Maximum seconds to wait for Home Assistant to answer.",
+            "tags": [
+              "advanced"
+            ]
           }
         }
       }
